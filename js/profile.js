@@ -1,51 +1,51 @@
-// ================================================================
-// FOTO DE PERFIL
-// ================================================================
+/* =============================================================
+   FOTO DE PERFIL - Muestra alerta al hacer clic
+   ============================================================= */
 
-// 1. Seleccionar el elemento de la foto de perfil usando su ID
-const fotoPerfil = document.getElementById("fotoPerfil");
+// Obtenemos el elemento de la foto de perfil por su ID
+const fotoPerfil = document.getElementById("profilePhoto");
 
-// 2. Agregar un evento "click" a la foto de perfil
-fotoPerfil.addEventListener("click", function() {
-  // 3. Mostrar una alerta cuando el usuario haga clic en la foto
+// Cuando el usuario hace clic en la foto, mostramos una alerta
+fotoPerfil.addEventListener("click", function () {
   alert("Perfil abierto");
 });
 
-// ================================================================
-// EDITAR PERFIL
-// ================================================================
+/* =============================================================
+   EDITAR PERFIL - Permite cambiar el nombre con un prompt
+   ============================================================= */
 
-// 1. Seleccionar el botón "Editar perfil" usando su ID
-const btnEditar = document.getElementById("btnEditarPerfil");
+// Obtenemos el boton "Editar perfil" y el texto del nombre
+const botonEditar = document.getElementById("editProfileBtn");
+const textoNombre = document.getElementById("nameDisplay");
 
-// 2. Seleccionar el elemento donde se muestra el nombre completo
-const nombreCompleto = document.getElementById("nombreCompleto");
+// Cuando el usuario hace clic en "Editar perfil", preguntamos el nuevo nombre
+botonEditar.addEventListener("click", function () {
+  // Mostramos un cuadro de dialogo para que el usuario escriba
+  const nuevoNombre = prompt("Ingresa tu nuevo nombre");
 
-// 3. Agregar un evento "click" al botón
-btnEditar.addEventListener("click", function() {
-  // 4. Pedir al usuario que ingrese un nuevo nombre usando prompt()
-  const nuevoNombre = prompt("Ingresa tu nuevo nombre", nombreCompleto.textContent);
-
-  // 5. Si el usuario no canceló el prompt y escribió algo, actualizar el nombre
+  // Si el usuario escribio algo (no cancelo ni dejo vacio), lo actualizamos
   if (nuevoNombre !== null && nuevoNombre.trim() !== "") {
-    nombreCompleto.textContent = nuevoNombre.trim();
+    textoNombre.textContent = nuevoNombre;
   }
 });
 
-// ================================================================
-// HISTORIAS DESTACADAS
-// ================================================================
+/* =============================================================
+   HISTORIAS DESTACADAS - Muestra alerta al hacer clic
+   ============================================================= */
 
-// 1. Seleccionar TODOS los elementos que tienen la clase "historia-item"
-const historias = document.querySelectorAll(".historia-item");
+// Obtenemos todas las historias destacadas por su ID
+const historia1 = document.getElementById("story1");
+const historia2 = document.getElementById("story2");
+const historia3 = document.getElementById("story3");
+const historia4 = document.getElementById("story4");
 
-// 2. Recorrer cada historia usando un bucle simple
-for (let i = 0; i < historias.length; i++) {
-  const historia = historias[i];
-
-  // 3. Agregar un evento "click" a cada historia
-  historia.addEventListener("click", function() {
-    // 4. Mostrar una alerta indicando que se abre la historia
-    alert("Abriendo historia destacada...");
-  });
+// Funcion que se ejecuta al hacer clic en cualquier historia
+function abrirHistoria() {
+  alert("Abriendo historia destacada...");
 }
+
+// Asignamos la funcion a cada historia destacada
+historia1.addEventListener("click", abrirHistoria);
+historia2.addEventListener("click", abrirHistoria);
+historia3.addEventListener("click", abrirHistoria);
+historia4.addEventListener("click", abrirHistoria);
