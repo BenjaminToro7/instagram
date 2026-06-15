@@ -4,6 +4,10 @@
 <head>
   <meta charset="UTF-8">
   <title>Instagram</title>
+    <title>Instagram · Mensajes</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Grand+Hotel&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/global.css">
   <link rel="stylesheet" href="../css/home.css">
 </head>
 <body>
@@ -11,20 +15,20 @@
 <!-- TODO EL LADO IZQUIERDO, LA BARRA CON LAS OPCIONES -->
 <div class="todo">
 
-  <!-- BARRA LATERAL, LA QUE TIENE LOS ICONOS -->
-  <div class="barra">
-    <div class="logo">Instagram</div>
-    <div class="menu">
-      <!-- OPCION INICIO, LA CASITA, ESTA ACTIVA PO -->
-      <div class="opcion active">
-        <svg viewBox="0 0 24 24" width="24" height="24"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 0 0 1 1h3m10-11l2 2m-2-2v10a1 1 0 0 1-1 1h-3m-6 0a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1m-6 0h6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        Inicio
+  <nav class="sidebar">
+      <div class="logo-link">
+        <span class="logo-text">Instagram</span>
+        <span class="logo-icon"><i class="fa-brands fa-instagram"></i></span>
       </div>
-      <!-- BUSCAR, LA LUPA, PA ENCONTRAR WEAS -->
-      <div class="opcion" onclick="location.href='search.html'">
-        <svg viewBox="0 0 24 24" width="24" height="24"><circle cx="10" cy="10" r="7" fill="none" stroke="currentColor" stroke-width="2"/><line x1="15" y1="15" x2="21" y2="21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-        Buscar
+      <div class="nav-items">
+        <a href="home.html" class="nav-item"><i class="fa-solid fa-house"></i><span>Inicio</span></a>
+        <div class="nav-item" id="searchBtn"><i class="fa-solid fa-magnifying-glass"></i><span>Buscar</span></div>
+        <a href="reels.html" class="nav-item"><i class="fa-solid fa-clapperboard"></i><span>Reels</span></a>
+        <a href="messages.html" class="nav-item active"><i class="fa-regular fa-paper-plane"></i><span>Mensajes</span></a>
+        <a href="notifications.html" class="nav-item"><i class="fa-regular fa-heart"></i><span>Notificaciones</span></a>
+        <a href="profile.html" class="nav-item" id="profileNavItem"><img class="avatar-xs" id="navAvatar" src="" alt=""><span>Perfil</span></a>
       </div>
+    </nav>
       <!-- REELS, LOS VIDEOS CORTOH -->
       <div class="opcion" onclick="location.href='reels.html'">
         <svg viewBox="0 0 24 24" width="24" height="24"><polygon points="5 3 19 12 5 21 5 3" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
