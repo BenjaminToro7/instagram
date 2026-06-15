@@ -29,23 +29,3 @@ botonEditar.addEventListener("click", function () {
   }
 });
 
-/* =============================================================
-   HISTORIAS DESTACADAS - Muestra alerta al hacer clic
-   ============================================================= */
-
-// Obtenemos todas las historias destacadas por su ID
-const historia1 = document.getElementById("story1");
-const historia2 = document.getElementById("story2");
-const historia3 = document.getElementById("story3");
-const historia4 = document.getElementById("story4");
-
-// Funcion que se ejecuta al hacer clic en cualquier historia
-function abrirHistoria() {
-  alert("Abriendo historia destacada...");
-}
-
-// Asignamos la funcion a cada historia destacada
-historia1.addEventListener("click", abrirHistoria);
-historia2.addEventListener("click", abrirHistoria);
-historia3.addEventListener("click", abrirHistoria);
-historia4.addEventListener("click", abrirHistoria);
