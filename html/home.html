@@ -107,10 +107,6 @@
         <div class="post-texto"><strong>matemagia</strong> La magia de las matematicas ✨</div>
         <div class="post-comments">Ver los 12 comentarios</div>
         <div class="post-tiempo">HACE 10 MINUTOS</div>
-        <div class="post-comment-input">
-          <input type="text" placeholder="Agrega un comentario..." class="comment-input" onkeydown="if(event.key=='Enter')this.nextElementSibling.click()">
-          <button class="comment-btn" onclick="var i=this.previousElementSibling,t=i.value.trim();if(!t)return;var p=this.closest('.post');p.querySelector('.post-tiempo').insertAdjacentHTML('beforebegin','<div class=pc><strong>tu</strong> '+t+'</div>');var c=p.querySelector('.post-comments');c.textContent='Ver los '+(parseInt(c.textContent.match(/\d+/))+1)+' comentarios';i.value=''">Publicar</button>
-        </div>
       </div>
 
       <!-- PUBLICACION DE M30M -->
@@ -135,11 +131,7 @@
         <div class="post-likes"><span class="contador">67</span> likes</div>
         <div class="post-texto"><strong>m30m</strong>El que lee es weko</div>
         <div class="post-comments">Ver los 8 comentarios</div>
-        <div class="post-tiempo">HACE 15 MINUTOS</div>
-        <div class="post-comment-input">
-          <input type="text" placeholder="Agrega un comentario..." class="comment-input" onkeydown="if(event.key=='Enter')this.nextElementSibling.click()">
-          <button class="comment-btn" onclick="var i=this.previousElementSibling,t=i.value.trim();if(!t)return;var p=this.closest('.post');p.querySelector('.post-tiempo').insertAdjacentHTML('beforebegin','<div class=pc><strong>tu</strong> '+t+'</div>');var c=p.querySelector('.post-comments');c.textContent='Ver los '+(parseInt(c.textContent.match(/\d+/))+1)+' comentarios';i.value=''">Publicar</button>
-        </div>
+        <div class="post-tiempo">HACE 1 MINUTOS</div>
       </div>
     </div>
 
