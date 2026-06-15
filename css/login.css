@@ -1,0 +1,101 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:white;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.contenedor{
+    display:flex;
+    gap:60px;
+    align-items:center;
+}
+
+.telefono{
+    width:260px;
+    height:520px;
+    border:10px solid black;
+    border-radius:35px;
+    padding:15px;
+}
+
+.pantalla{
+    width:100%;
+    height:100%;
+    background:#fafafa;
+    border-radius:20px;
+    padding:15px;
+}
+
+.pantalla h2{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+.historia{
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    background:linear-gradient(
+        45deg,
+        orange,
+        red,
+        purple
+    );
+    margin:auto;
+}
+
+.publicacion{
+    margin-top:25px;
+}
+
+.imagen{
+    width:100%;
+    height:250px;
+    background:#ddd;
+    border-radius:10px;
+}
+
+.login{
+    width:350px;
+    border:1px solid #dbdbdb;
+    padding:40px;
+    border-radius:10px;
+}
+
+.login h1{
+    text-align:center;
+    margin-bottom:30px;
+    font-family:cursive;
+}
+
+input{
+    width:100%;
+    padding:12px;
+    margin-bottom:10px;
+    border:1px solid #dbdbdb;
+    border-radius:5px;
+}
+
+button{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:8px;
+    background:#0095f6;
+    color:white;
+    cursor:pointer;
+}
+
+.registro{
+    text-align:center;
+    margin-top:20px;
+}
