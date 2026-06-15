@@ -241,9 +241,54 @@ body {
   margin-bottom: 4px;
 }
 
+/* COMENTARIOS */
+.pc {
+  font-size: 13px;
+  margin-bottom: 4px;
+}
+
 /* CUANTO TIEMPO HACE QUE SE SUBIO */
 .post-tiempo {
   font-size: 10px;
   color: #aaa;
+  margin-bottom: 8px;
+}
+
+/* INPUT DE COMENTARIO */
+.post-comment-input {
+  border-top: 1px solid #333;
+  padding-top: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.comment-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: white;
+  font-size: 13px;
+  padding: 4px 0;
+}
+
+.comment-input::placeholder {
+  color: #555;
+}
+
+.comment-btn {
+  background: none;
+  border: none;
+  color: #0095f6;
+  font-weight: bold;
+  font-size: 13px;
+  cursor: pointer;
+  padding: 4px 8px;
+  white-space: nowrap;
+}
+
+.comment-btn:hover {
+  color: white;
 }
 

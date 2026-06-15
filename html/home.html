@@ -21,7 +21,7 @@
         Inicio
       </div>
       <!-- BUSCAR, LA LUPA, PA ENCONTRAR WEAS -->
-      <div class="opcion">
+      <div class="opcion" onclick="location.href='search.html'">
         <svg viewBox="0 0 24 24" width="24" height="24"><circle cx="10" cy="10" r="7" fill="none" stroke="currentColor" stroke-width="2"/><line x1="15" y1="15" x2="21" y2="21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
         Buscar
       </div>
@@ -107,6 +107,10 @@
         <div class="post-texto"><strong>matemagia</strong> La magia de las matematicas ✨</div>
         <div class="post-comments">Ver los 12 comentarios</div>
         <div class="post-tiempo">HACE 10 MINUTOS</div>
+        <div class="post-comment-input">
+          <input type="text" placeholder="Agrega un comentario..." class="comment-input" onkeydown="if(event.key=='Enter')this.nextElementSibling.click()">
+          <button class="comment-btn" onclick="var i=this.previousElementSibling,t=i.value.trim();if(!t)return;var p=this.closest('.post');p.querySelector('.post-tiempo').insertAdjacentHTML('beforebegin','<div class=pc><strong>tu</strong> '+t+'</div>');var c=p.querySelector('.post-comments');c.textContent='Ver los '+(parseInt(c.textContent.match(/\d+/))+1)+' comentarios';i.value=''">Publicar</button>
+        </div>
       </div>
 
       <!-- PUBLICACION DE M30M -->
@@ -132,6 +136,10 @@
         <div class="post-texto"><strong>m30m</strong>El que lee es weko</div>
         <div class="post-comments">Ver los 8 comentarios</div>
         <div class="post-tiempo">HACE 15 MINUTOS</div>
+        <div class="post-comment-input">
+          <input type="text" placeholder="Agrega un comentario..." class="comment-input" onkeydown="if(event.key=='Enter')this.nextElementSibling.click()">
+          <button class="comment-btn" onclick="var i=this.previousElementSibling,t=i.value.trim();if(!t)return;var p=this.closest('.post');p.querySelector('.post-tiempo').insertAdjacentHTML('beforebegin','<div class=pc><strong>tu</strong> '+t+'</div>');var c=p.querySelector('.post-comments');c.textContent='Ver los '+(parseInt(c.textContent.match(/\d+/))+1)+' comentarios';i.value=''">Publicar</button>
+        </div>
       </div>
     </div>
 

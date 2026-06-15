@@ -47,3 +47,5 @@ function darLikeFoto(wrap) {
   anim.classList.add("mostrar");
 }
 
+
+
