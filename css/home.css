@@ -286,3 +286,90 @@ body {
 .comment-icon {
   cursor: pointer;
 }
+
+.panelChats {
+    width: 397px;
+    height: 100vh;
+    border-right: 1px solid #262626;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+}
+.usuarioActual {
+    padding: 24px 24px 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.usuarioActual h2 { font-size: 20px; font-weight: 700; }
+.usuarioActual i { font-size: 20px; cursor: pointer; }
+.busqueda {
+    margin: 0 16px 12px;
+    background: #262626;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    gap: 8px;
+}
+.busqueda i { color: #a8a8a8; font-size: 14px; }
+.busqueda input {
+    background: none;
+    border: none;
+    outline: none;
+    color: #fff;
+    width: 100%;
+    font-size: 14px;
+}
+.tituloChats {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 24px;
+    margin-bottom: 8px;
+}
+.tituloChats h3 { font-size: 15px; }
+.tituloChats a { color: #0095f6; text-decoration: none; font-size: 13px; font-weight: 600; }
+#listaChats { overflow-y: auto; flex: 1; }
+.chat {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 24px;
+    cursor: pointer;
+    transition: background 0.15s;
+}
+.chat:hover { background: #121212; }
+.chat img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.textoChat { flex: 1; min-width: 0; }
+.textoChat h4 { font-size: 14px; font-weight: 600; }
+.textoChat .last-msg {
+    color: #a8a8a8;
+    font-size: 13px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.textoChat .msg-time {
+    font-size: 11px;
+    color: #a8a8a8;
+    flex-shrink: 0;
+}
+.chat .unread-badge {
+    background: #0095f6;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 600;
+    min-width: 18px;
+    height: 18px;
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 4px;
+}
+/* El resto del CSS (conversacion, headerChat, etc.) también se puede simplificar igual */
