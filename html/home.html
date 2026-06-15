@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- wm, esto es el inicio de instagram po -->
+<!--esto es el inicio de instagram po -->
 <html lang="es">
 <head>
   <meta charset="UTF-8">
@@ -22,17 +22,16 @@
       <a href="reels.html" class="nav-item"><i class="fa-solid fa-clapperboard"></i><span>Reels</span></a>
       <a href="messages.html" class="nav-item"><i class="fa-regular fa-paper-plane"></i><span>Mensajes</span></a>
       <a href="notificaciones.html" class="nav-item"><i class="fa-regular fa-heart"></i><span>Notificaciones</span></a>
-      <a href="profile.html" class="nav-item" id="profileNavItem"><img class="avatar-xs" id="navAvatar" src="" alt=""><span>Perfil</span></a>
+      <a href="profile.html" class="nav-item" id="profileNavItem"><img class="avatar-xs" id="navAvatar" src="https://i.pinimg.com/736x/f1/45/13/f145137f744edc5e283cf94dd676ab92.jpg" alt=""><span>Perfil</span></a>
     </div>
   </nav>
 
   <div class="main-content">
     <div class="feed">
 
-    <!-- STORIES, LAS HISTORIAS DE ARRIBA -->
     <div class="stories">
       <div class="story">
-        <div class="story-img"><img src="https://i.pravatar.cc/60?img=1"></div>
+        <div class="story-img"><img src="https://i.pinimg.com/736x/f1/45/13/f145137f744edc5e283cf94dd676ab92.jpg"></div>
         <p>Tu historia</p>
       </div>
       <div class="story">
@@ -49,16 +48,13 @@
       </div>
     </div>
 
-    <!-- FEED, LAS PUBLICACIONES -->
-      <!-- PUBLICACION DE MATEMAGIA -->
       <div class="post">
         <div class="post-cabeza">
           <img src="../imagenes/matemagia.png">
           <span class="post-user">matemagia</span>
           <span>⋯</span>
         </div>
-        <!-- LA FOTO, AL HACER DOBLE CLIC DA LIKE -->
-        <div class="post-foto-wrap" ondblclick="darLikeFoto(this)">
+        <div class="post-foto-wrap">
           <img class="post-foto" src="../imagenes/publicacion_matemagia.png">
           <div class="heart-anim"></div>
         </div>
@@ -72,12 +68,12 @@
         <div class="post-likes"><span class="contador">67</span> likes</div>
         <div class="post-texto"><strong>matemagia</strong> La magia de las matematicas ✨</div>
         <div class="post-comments">Ver los 12 comentarios</div>
-        <div class="post-tiempo">HACE 10 MINUTOS</div>
+        <div class="comentarios"></div>
+        <div class="post-tiempo">Hace 1 segundo</div>
         <div class="post-comment-input">
-          <input type="text" placeholder="Agrega un comentario..." class="comment-input" onkeydown="if(event.key=='Enter')this.nextElementSibling.click()">
-          <button class="comment-btn" onclick="var i=this.previousElementSibling,t=i.value.trim();if(t){this.closest('.post').querySelector('.post-tiempo').insertAdjacentHTML('beforebegin','<div class=pc><strong>tu</strong> '+t+'</div>');var c=this.closest('.post').querySelector('.post-comments');c.textContent='Ver los '+(parseInt(c.textContent.match(/\d+/))+1)+' comentarios';i.value=''}">Publicar</button>
+          <input type="text" class="comment-input" placeholder="Agrega un comentario...">
+          <button class="comment-btn" onclick="publicarComentario(this)">Publicar</button>
         </div>
-      </div>
 
       <!-- PUBLICACION DE M30M -->
       <div class="post">
@@ -86,12 +82,10 @@
           <span class="post-user">m30m</span>
           <span>⋯</span>
         </div>
-        <!-- LA FOTO, DOBLE CLIC PA LIKEAR -->
-        <div class="post-foto-wrap" ondblclick="darLikeFoto(this)">
+        <div class="post-foto-wrap"></div>>
           <img class="post-foto" src="../imagenes/publicacion_m30m.png">
           <div class="heart-anim"></div>
         </div>
-        <!-- BOTONES DE ABAJO DE LA FOTO -->
         <div class="post-botones">
           <svg class="like-btn" viewBox="0 0 24 24" width="22" height="22" onclick="darLike(this)"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="none" stroke="currentColor" stroke-width="2"/></svg>
           <svg viewBox="0 0 24 24" width="22" height="22"><path d="M21 6v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" fill="none" stroke="currentColor" stroke-width="2"/><path d="M22 6l-10 7L2 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -101,10 +95,10 @@
         <div class="post-likes"><span class="contador">67</span> likes</div>
         <div class="post-texto"><strong>m30m</strong>El que lee es weko</div>
         <div class="post-comments">Ver los 8 comentarios</div>
-        <div class="post-tiempo">HACE 1 MINUTOS</div>
+        <div class="post-tiempo">Hace 1 segundo</div>
         <div class="post-comment-input">
-          <input type="text" placeholder="Agrega un comentario..." class="comment-input" onkeydown="if(event.key=='Enter')this.nextElementSibling.click()">
-          <button class="comment-btn" onclick="var i=this.previousElementSibling,t=i.value.trim();if(t){this.closest('.post').querySelector('.post-tiempo').insertAdjacentHTML('beforebegin','<div class=pc><strong>tu</strong> '+t+'</div>');var c=this.closest('.post').querySelector('.post-comments');c.textContent='Ver los '+(parseInt(c.textContent.match(/\d+/))+1)+' comentarios';i.value=''}">Publicar</button>
+          <input type="text" placeholder="Agrega un comentario..." class="comment-input">
+          <button class="comment-btn " onclick="publicarComentario(this)">Publicar</button>
         </div>
       </div>
     </div>
