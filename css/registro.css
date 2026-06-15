@@ -1,0 +1,146 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background-color: #fafafa;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.registro-container{
+    width: 100%;
+    max-width: 400px;
+}
+
+.registro-card{
+    background: white;
+    border: 1px solid #dbdbdb;
+    border-radius: 10px;
+    padding: 40px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.logo{
+    text-align: center;
+    font-size: 48px;
+    margin-bottom: 15px;
+    color: #262626;
+    font-family: cursive;
+}
+
+.descripcion{
+    text-align: center;
+    color: #737373;
+    font-size: 14px;
+    margin-bottom: 25px;
+    line-height: 1.5;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"]{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #dbdbdb;
+    border-radius: 6px;
+    background-color: #fafafa;
+    font-size: 14px;
+}
+
+input:focus{
+    outline: none;
+    border-color: #0095f6;
+    background-color: white;
+}
+
+.checkbox-container{
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin-top: 5px;
+}
+
+.checkbox-container input{
+    margin-top: 3px;
+}
+
+.checkbox-container label{
+    font-size: 13px;
+    color: #555;
+    line-height: 1.4;
+}
+
+button{
+    width: 100%;
+    padding: 12px;
+    background-color: #0095f6;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover{
+    background-color: #1877f2;
+}
+
+#mensaje{
+    text-align: center;
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.login-card{
+    background: white;
+    border: 1px solid #dbdbdb;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+}
+
+.login-card p{
+    font-size: 14px;
+    color: #262626;
+}
+
+.login-card a{
+    text-decoration: none;
+    color: #0095f6;
+    font-weight: bold;
+}
+
+.login-card a:hover{
+    text-decoration: underline;
+}
+
+/* Responsive para celulares */
+@media (max-width: 480px){
+
+    .registro-card{
+        padding: 25px;
+    }
+
+    .logo{
+        font-size: 40px;
+    }
+
+}
