@@ -1,47 +1,65 @@
+// Seleccionar todos los reels y videos
 var reels = document.querySelectorAll(".reel");
 var videos = document.querySelectorAll("video");
 
-// Reproducir el primer video al cargar
-window.addEventListener("load", function() {
-    videos[0].play().catch(function() {});
-});
+// Reproducir el primer video al cargar la página
+window.onload = function() {
+    if (videos[0]) videos[0].play();
+};
 
-// Cambiar de reel al hacer scroll (IntersectionObserver)
+// Detectar qué reel está visible en pantalla (con IntersectionObserver)
 var observer = new IntersectionObserver(function(entries) {
-    entries.forEach(function(entry) {
+    for (var i = 0; i < entries.length; i++) {
+        var entry = entries[i];
         var video = entry.target.querySelector("video");
         if (entry.isIntersecting) {
-            videos.forEach(function(v) {
-                if (v !== video) {
-                    v.pause();
-                    v.currentTime = 0;
+            // Pausar todos los demás videos
+            for (var j = 0; j < videos.length; j++) {
+                if (videos[j] !== video) {
+                    videos[j].pause();
+                    videos[j].currentTime = 0;
                 }
-            });
-            video.play().catch(function() {});
+            }
+            video.play();
         } else {
             video.pause();
             video.currentTime = 0;
         }
-    });
+    }
 }, { threshold: 0.7 });
 
-reels.forEach(function(reel) {
-    observer.observe(reel);
-});
+for (var i = 0; i < reels.length; i++) {
+    observer.observe(reels[i]);
+}
 
-// Click en video: pausar/reproducir
-videos.forEach(function(video) {
-    video.addEventListener("click", function() {
-        if (video.paused) {
-            video.play();
-        } else {
-            video.pause();
+// Al hacer clic en un video: pausar o reproducir
+for (var i = 0; i < videos.length; i++) {
+    videos[i].onclick = function() {
+        if (this.paused) this.play();
+        else this.pause();
+    };
+}
+
+// ----- Funciones para like, comentario y seguir -----
+function darLike(icono, span, corazon) {
+    if (icono.classList.contains("fa-regular")) {
+        icono.classList.remove("fa-regular");
+        icono.classList.add("fa-solid");
+        icono.style.color = "red";
+        // Aumentar contador
+        var numero = parseInt(span.innerText);
+        if (!isNaN(numero)) {
+            span.innerText = numero + 1;
         }
-    });
-});
+        // Mostrar animación
+        corazon.classList.add("activo");
+        setTimeout(function() { corazon.classList.remove("activo"); }, 700);
+    }
+}
 
-// ==================== INTERACCIONES POR CADA REEL ====================
-reels.forEach(function(reel) {
+// Asignar eventos a cada reel
+for (var i = 0; i < reels.length; i++) {
+    var reel = reels[i];
     var video = reel.querySelector("video");
     var corazonAnimado = reel.querySelector(".corazon");
     var likeBoton = reel.querySelector(".like");
@@ -51,40 +69,35 @@ reels.forEach(function(reel) {
     var seguirBoton = reel.querySelector(".boton:last-child");
     var seguirSpan = seguirBoton.querySelector("span");
 
-    // ----- LIKE (doble clic en video) -----
-    video.addEventListener("dblclick", function() {
+    // Doble clic en video: like
+    video.ondblclick = function() {
         darLike(likeIcono, likeSpan, corazonAnimado);
-    });
+    };
 
-    // ----- LIKE (clic en el corazón) -----
-    likeBoton.addEventListener("click", function(e) {
-        e.stopPropagation(); // Evita que el clic en el botón también active el click del video
+    // Clic en botón like
+    likeBoton.onclick = function(e) {
+        e.stopPropagation();  // Evita que el video también se pause/reproduzca
         darLike(likeIcono, likeSpan, corazonAnimado);
-    });
+    };
 
-    // ----- COMENTARIO (clic en el ícono de comentario) -----
-    comentarioBoton.addEventListener("click", function(e) {
+    // Clic en botón comentario
+    comentarioBoton.onclick = function(e) {
         e.stopPropagation();
         var comentario = prompt("Escribe tu comentario:");
         if (comentario && comentario.trim() !== "") {
-            // Mostrar el comentario en un alert (básico)
             alert("Comentario enviado: " + comentario);
-            // Opcional: incrementar contador de comentarios
             var comentarioSpan = comentarioBoton.querySelector("span");
-            var numComentarios = parseInt(comentarioSpan.innerText);
-            if (!isNaN(numComentarios)) {
-                comentarioSpan.innerText = numComentarios + 1;
-            }
+            var num = parseInt(comentarioSpan.innerText);
+            if (!isNaN(num)) comentarioSpan.innerText = num + 1;
         }
-    });
+    };
 
-    // ----- SEGUIR / DEJAR DE SEGUIR -----
-    seguirBoton.addEventListener("click", function(e) {
+    // Clic en botón seguir / dejar de seguir
+    seguirBoton.onclick = function(e) {
         e.stopPropagation();
         if (seguirSpan.innerText === "Seguir") {
             seguirSpan.innerText = "Siguiendo";
             seguirBoton.style.color = "#0095f6";
-            // Opcional: cambiar ícono
             var icono = seguirBoton.querySelector("i");
             icono.classList.remove("fa-user-plus");
             icono.classList.add("fa-user-check");
@@ -95,27 +108,5 @@ reels.forEach(function(reel) {
             icono.classList.remove("fa-user-check");
             icono.classList.add("fa-user-plus");
         }
-    });
-});
-
-// Función para dar like (actualiza ícono, color y contador)
-function darLike(icono, span, corazonAnimado) {
-    var esLike = icono.classList.contains("fa-regular");
-    if (esLike) {
-        icono.classList.remove("fa-regular");
-        icono.classList.add("fa-solid");
-        icono.style.color = "red";
-        // Aumentar contador
-        var numero = parseInt(span.innerText);
-        if (!isNaN(numero)) {
-            var nuevoNumero = numero + 1;
-            span.innerText = nuevoNumero + (numero >= 1000 ? "k" : "");
-        }
-        // Mostrar animación del corazón
-        corazonAnimado.classList.add("activo");
-        setTimeout(function() {
-            corazonAnimado.classList.remove("activo");
-        }, 700);
-    }
-    // Si ya tiene like, no hacemos nada (no permite quitar like para simplificar)
+    };
 }
