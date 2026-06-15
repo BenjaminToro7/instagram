@@ -4,7 +4,6 @@
 <head>
   <meta charset="UTF-8">
   <title>Instagram</title>
-    <title>Instagram · Mensajes</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Grand+Hotel&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/global.css">
@@ -12,26 +11,23 @@
 </head>
 <body>
 
-<!-- TODO EL LADO IZQUIERDO, LA BARRA CON LAS OPCIONES -->
-<div class="todo">
+<nav class="sidebar">
+    <div class="logo-link">
+      <span class="logo-text">Instagram</span>
+      <span class="logo-icon"><i class="fa-brands fa-instagram"></i></span>
+    </div>
+    <div class="nav-items">
+      <a href="home.html" class="nav-item active"><i class="fa-solid fa-house"></i><span>Inicio</span></a>
+      <div class="nav-item" onclick="location.href='search.html'"><i class="fa-solid fa-magnifying-glass"></i><span>Buscar</span></div>
+      <a href="reels.html" class="nav-item"><i class="fa-solid fa-clapperboard"></i><span>Reels</span></a>
+      <a href="messages.html" class="nav-item"><i class="fa-regular fa-paper-plane"></i><span>Mensajes</span></a>
+      <a href="notificaciones.html" class="nav-item"><i class="fa-regular fa-heart"></i><span>Notificaciones</span></a>
+      <a href="profile.html" class="nav-item" id="profileNavItem"><img class="avatar-xs" id="navAvatar" src="" alt=""><span>Perfil</span></a>
+    </div>
+  </nav>
 
-  <nav class="sidebar">
-      <div class="logo-link">
-        <span class="logo-text">Instagram</span>
-        <span class="logo-icon"><i class="fa-brands fa-instagram"></i></span>
-      </div>
-      <div class="nav-items">
-        <a href="home.html" class="nav-item"><i class="fa-solid fa-house"></i><span>Inicio</span></a>
-        <a href="search.html" class="nav-item" id="searchBtn"><i class="fa-solid fa-magnifying-glass"><span>Buscar</span></a>
-        <a href="reels.html" class="nav-item"><i class="fa-solid fa-clapperboard"></i><span>Reels</span></a>
-        <a href="messages.html" class="nav-item active"><i class="fa-regular fa-paper-plane"></i><span>Mensajes</span></a>
-        <a href="notificaciones.html" class="nav-item"><i class="fa-regular fa-heart"></i><span>Notificaciones</span></a>
-        <a href="profile.html" class="nav-item" id="profileNavItem"><img class="avatar-xs" id="navAvatar" src="" alt=""><span>Perfil</span></a>
-      </div>
-    </nav>
-
-  <!-- CONTENIDO CENTRAL, LAS STORIES Y LOS POSTS -->
-  <div class="contenido">
+  <div class="main-content">
+    <div class="feed">
 
     <!-- STORIES, LAS HISTORIAS DE ARRIBA -->
     <div class="stories">
@@ -54,8 +50,6 @@
     </div>
 
     <!-- FEED, LAS PUBLICACIONES -->
-    <div class="feed">
-
       <!-- PUBLICACION DE MATEMAGIA -->
       <div class="post">
         <div class="post-cabeza">
@@ -79,6 +73,10 @@
         <div class="post-texto"><strong>matemagia</strong> La magia de las matematicas ✨</div>
         <div class="post-comments">Ver los 12 comentarios</div>
         <div class="post-tiempo">HACE 10 MINUTOS</div>
+        <div class="post-comment-input">
+          <input type="text" placeholder="Agrega un comentario..." class="comment-input" onkeydown="if(event.key=='Enter')this.nextElementSibling.click()">
+          <button class="comment-btn" onclick="var i=this.previousElementSibling,t=i.value.trim();if(t){this.closest('.post').querySelector('.post-tiempo').insertAdjacentHTML('beforebegin','<div class=pc><strong>tu</strong> '+t+'</div>');var c=this.closest('.post').querySelector('.post-comments');c.textContent='Ver los '+(parseInt(c.textContent.match(/\d+/))+1)+' comentarios';i.value=''}">Publicar</button>
+        </div>
       </div>
 
       <!-- PUBLICACION DE M30M -->
@@ -104,12 +102,14 @@
         <div class="post-texto"><strong>m30m</strong>El que lee es weko</div>
         <div class="post-comments">Ver los 8 comentarios</div>
         <div class="post-tiempo">HACE 1 MINUTOS</div>
+        <div class="post-comment-input">
+          <input type="text" placeholder="Agrega un comentario..." class="comment-input" onkeydown="if(event.key=='Enter')this.nextElementSibling.click()">
+          <button class="comment-btn" onclick="var i=this.previousElementSibling,t=i.value.trim();if(t){this.closest('.post').querySelector('.post-tiempo').insertAdjacentHTML('beforebegin','<div class=pc><strong>tu</strong> '+t+'</div>');var c=this.closest('.post').querySelector('.post-comments');c.textContent='Ver los '+(parseInt(c.textContent.match(/\d+/))+1)+' comentarios';i.value=''}">Publicar</button>
+        </div>
       </div>
     </div>
 
   </div>
-
-</div>
 
 <script src="../js/home.js"></script>
 </body>
