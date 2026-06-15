@@ -1,22 +1,25 @@
+/* LIMPIEZA GENERAL, SACAMOS TOOS LOS MARGENES */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* EL FONDO NEGRO, COMO INSTAGRAM */
 body {
   font-family: Arial, sans-serif;
   background: black;
   color: white;
 }
 
+/* CONTENEDOR PRINCIPAL, TODO EN UNA FILA */
 .todo {
   display: flex;
   max-width: 1000px;
   margin: auto;
 }
 
-/* Barra izquierda */
+/* BARRA IZQUIERDA, LA QUE TIENE TOAS LAS OPCIONES */
 .barra {
   width: 220px;
   padding: 15px;
@@ -30,6 +33,7 @@ body {
   background: black;
 }
 
+/* EL LOGO DE INSTAGRAM, EN CURSIVA */
 .logo {
   font-size: 22px;
   font-style: italic;
@@ -37,6 +41,7 @@ body {
   padding: 20px 10px;
 }
 
+/* CONTENEDOR DE LAS OPCIONES DEL MENU */
 .menu {
   flex: 1;
   display: flex;
@@ -44,6 +49,7 @@ body {
   gap: 5px;
 }
 
+/* CADA OPCION DE LA BARRA */
 .opcion {
   display: flex;
   align-items: center;
@@ -54,23 +60,22 @@ body {
   font-size: 15px;
 }
 
+/* CUANDO PASAS EL MOUSE SE PONE GRIS OSCURO */
 .opcion:hover {
   background: #1a1a1a;
 }
 
+/* LA OPCION ACTIVA ESTA EN NEGRITA */
 .opcion.active {
   font-weight: bold;
 }
 
-.opcion span {
-  font-size: 22px;
-}
-
+/* ABAJO DEL TODO, PA SEPARAR DEL RESTO */
 .abajo {
   margin-top: auto;
 }
 
-/* Contenido */
+/* CONTENIDO DEL CENTRO, DONDE ESTAN LAS FOTOS */
 .contenido {
   margin-left: 220px;
   flex: 1;
@@ -78,7 +83,7 @@ body {
   padding: 20px;
 }
 
-/* Stories */
+/* STORIES, LAS HISTORIAS EN HORIZONTAL */
 .stories {
   display: flex;
   gap: 15px;
@@ -88,10 +93,12 @@ body {
   margin-bottom: 20px;
 }
 
+/* SACAMOS LA BARRA DE SCROLL */
 .stories::-webkit-scrollbar {
   display: none;
 }
 
+/* CADA HISTORIA INDIVIDUAL */
 .story {
   display: flex;
   flex-direction: column;
@@ -101,6 +108,7 @@ body {
   flex-shrink: 0;
 }
 
+/* EL CIRCULO DE LA HISTORIA CON BORDE ROSADO */
 .story-img {
   width: 60px;
   height: 60px;
@@ -109,6 +117,7 @@ body {
   padding: 2px;
 }
 
+/* LA FOTO DENTRO DEL CIRCULO */
 .story-img img {
   width: 100%;
   height: 100%;
@@ -116,18 +125,20 @@ body {
   display: block;
 }
 
+/* EL NOMBRE DEBAJO DE LA HISTORIA */
 .story p {
   font-size: 11px;
   color: #aaa;
 }
 
-/* Post */
+/* PUBLICACION, CADA POST INDIVIDUAL */
 .post {
   margin-bottom: 20px;
   border-bottom: 1px solid #333;
   padding-bottom: 15px;
 }
 
+/* CABECERA DEL POST, FOTO DE PERFIL + NOMBRE */
 .post-cabeza {
   display: flex;
   align-items: center;
@@ -135,26 +146,69 @@ body {
   padding: 8px 0;
 }
 
+/* FOTO DE PERFIL EN LA CABECERA */
 .post-cabeza img {
   width: 32px;
   height: 32px;
   border-radius: 50%;
 }
 
+/* NOMBRE DEL USUARIO */
 .post-user {
   font-weight: bold;
   font-size: 13px;
   flex: 1;
 }
 
+/* WRAPER DE LA FOTO, PA PONER EL CORAZON ENCIMA */
+.post-foto-wrap {
+  position: relative;
+  cursor: pointer;
+}
+
+/* LA FOTO DEL POST */
 .post-foto {
   width: 100%;
   aspect-ratio: 1;
   object-fit: cover;
   background: #111;
   border-radius: 4px;
+  user-select: none;
+  -webkit-user-drag: none;
+  pointer-events: none;
+  display: block;
 }
 
+/* CORAZON QUE APARECE AL HACER DOBLE CLIC */
+.heart-anim {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  pointer-events: none;
+  opacity: 0;
+}
+
+/* CUANDO SE ACTIVA LA ANIMACION DEL CORAZON */
+.heart-anim.mostrar {
+  animation: corazon 0.8s ease-out;
+}
+
+/* ANIMACION: APARECE, CRECE Y SE BORRA */
+@keyframes corazon {
+  0%   { transform: translate(-50%, -50%) scale(0); opacity: 1; }
+  30%  { transform: translate(-50%, -50%) scale(1.2); opacity: 1; }
+  60%  { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+  100% { transform: translate(-50%, -50%) scale(1); opacity: 0; }
+}
+
+/* BOTON DE LIKE, PA QUE NO SE SELECCIONE */
+.like-btn {
+  cursor: pointer;
+  user-select: none;
+}
+
+/* BOTONES DEBAJO DE LA FOTO */
 .post-botones {
   display: flex;
   gap: 15px;
@@ -162,27 +216,32 @@ body {
   font-size: 22px;
 }
 
+/* EL BOTON GUARDAR, PA LA DERECHA */
 .post-botones .guardar {
   margin-left: auto;
 }
 
+/* CANTIDAD DE LIKES */
 .post-likes {
   font-weight: bold;
   font-size: 13px;
   margin-bottom: 4px;
 }
 
+/* TEXTO DEL POST, CAPTION */
 .post-texto {
   font-size: 13px;
   margin-bottom: 4px;
 }
 
+/* COMENTARIOS, EN GRIS */
 .post-comments {
   font-size: 13px;
   color: #aaa;
   margin-bottom: 4px;
 }
 
+/* CUANTO TIEMPO HACE QUE SE SUBIO */
 .post-tiempo {
   font-size: 10px;
   color: #aaa;
