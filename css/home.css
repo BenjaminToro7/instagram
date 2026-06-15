@@ -2,12 +2,12 @@
 .main-content {
   display: flex;
   justify-content: center;
-  padding: 20px 0;
+  padding: 30px 0;
 }
 
 .main-content .feed {
-  width: 100%;
   max-width: 630px;
+  width: 100%;
 }
 
 /* STORIES, LAS HISTORIAS EN HORIZONTAL */
