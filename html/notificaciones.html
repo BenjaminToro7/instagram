@@ -3,12 +3,67 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Página vacía</title>
-  <link rel="stylesheet" href="/css/noti.css" />
+  <title>Notificaciones de Instagram</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="empty-message">
-    bandeja vacía
+  <div class="container">
+
+    <!-- ENCABEZADO -->
+    <div class="header">
+      <h1>Notificaciones</h1>
+      <button id="closeBtn">✕</button>
+    </div>
+
+    <!-- FILTROS -->
+    <div class="filters">
+      <button class="active">Todas</button>
+      <button>Personas que sigues</button>
+      <button>Comentarios</button>
+      <button>Seguidos</button>
+    </div>
+
+    <!-- MENSAJE CENTRAL -->
+    <div class="center-msg">
+      <svg class="heart-icon" viewBox="0 0 24 24" width="60" height="60" fill="none" stroke="#8e8e8e" stroke-width="1.5">
+        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+      </svg>
+      <p class="msg-title">Actividad en tus publicaciones</p>
+      <p class="msg-sub">Aquí verás los me gusta y comentarios de tus publicaciones.</p>
+    </div>
+
+    <!-- SUGERENCIAS -->
+    <p class="section-title">Sugerencias para ti</p>
+
+    <div class="suggestions">
+      <div class="user-row">
+        <img src="https://i.pravatar.cc/44?img=3" alt="" class="avatar" />
+        <span class="username">juan_dev</span>
+        <button class="follow-btn">Seguir</button>
+      </div>
+      <div class="user-row">
+        <img src="https://i.pravatar.cc/44?img=5" alt="" class="avatar" />
+        <span class="username">maria_web</span>
+        <button class="follow-btn">Seguir</button>
+      </div>
+      <div class="user-row">
+        <img src="https://i.pravatar.cc/44?img=8" alt="" class="avatar" />
+        <span class="username">lucas_html</span>
+        <button class="follow-btn">Seguir</button>
+      </div>
+      <div class="user-row">
+        <img src="https://i.pravatar.cc/44?img=10" alt="" class="avatar" />
+        <span class="username">ana_css</span>
+        <button class="follow-btn">Seguir</button>
+      </div>
+      <div class="user-row">
+        <img src="https://i.pravatar.cc/44?img=12" alt="" class="avatar" />
+        <span class="username">diego_js</span>
+        <button class="follow-btn">Seguir</button>
+      </div>
+    </div>
+
   </div>
+  <script src="script.js"></script>
 </body>
 </html>
