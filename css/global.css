@@ -15,7 +15,7 @@ body {
 ::-webkit-scrollbar-track { background: #111; }
 ::-webkit-scrollbar-thumb { background: #333; border-radius: 20px; }
 
-.sidebar {
+.barra-izquierda {
   width: 244px;
   height: 100vh;
   border-right: 1px solid #262626;
