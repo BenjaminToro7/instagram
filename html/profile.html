@@ -1,357 +1,167 @@
-<!DOCTYPE html>
-<!-- 
-  ============================================================
-  PERFIL DE INSTAGRAM - Réplica Visual
-  Proyecto escolar: HTML, CSS y JavaScript
-  ============================================================
-  Archivo:  index.html
-  Propósito: Estructura principal de la página de perfil
-  ============================================================
--->
+<!-- ============================================================
+  DOCUMENTO HTML - PERFIL DE INSTAGRAM (CLON VISUAL)
+  Tecnologias: HTML5, CSS3, JavaScript basico
+  Sin frameworks ni librerias externas
+  ============================================================ -->
 
+<!DOCTYPE html>
 <html lang="es">
 <head>
-
-  <!-- Metadatos básicos -->
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <!-- Título de la página -->
-  <title>usuario_demo • Instagram</title>
+  <!-- Configuracion basica del documento -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Perfil de Instagram</title>
 
   <!-- Enlace al archivo CSS externo -->
-  <link rel="stylesheet" href="style.css">
-
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- 
-    CONTENEDOR PRINCIPAL 
-    Divide la pantalla en: barra lateral izquierda + contenido del perfil
-  -->
-  <div class="contenedor-principal">
 
-    <!-- ================================================================ -->
-    <!-- BARRA LATERAL IZQUIERDA (SIDEBAR)                                -->
-    <!-- ================================================================ -->
-    <aside class="barra-lateral">
 
-      <!-- Logo de Instagram (texto estilizado) -->
-      <div class="logo">
-        <span class="logo-icono">
-          <!-- Cámara simple con SVG -->
-          <svg viewBox="0 0 24 24" width="24" height="24">
-            <rect x="2" y="4" width="20" height="16" rx="3" fill="none" stroke="white" stroke-width="1.5"/>
-            <circle cx="12" cy="12" r="4" fill="none" stroke="white" stroke-width="1.5"/>
-            <circle cx="17" cy="7" r="1" fill="white"/>
-          </svg>
-        </span>
-        <span class="logo-texto">Instagram</span>
+  <!-- ==========================================================
+    CONTENIDO PRINCIPAL
+    Seccion central donde se muestra el perfil
+    ========================================================== -->
+  <main class="profile">
+
+    <!-- ENCABEZADO DEL PERFIL -->
+    <header class="profile-header">
+
+      <!-- Fila superior: foto + info basica -->
+      <div class="profile-row">
+
+        <!-- Foto de perfil (circular, clickeable) -->
+        <div class="profile-photo" id="profilePhoto">
+          <img
+            src="https://i.pinimg.com/736x/f1/45/13/f145137f744edc5e283cf94dd676ab92.jpg"
+            alt="Foto de perfil"
+            id="profileImg"
+          />
+        </div>
+
+        <!-- Columna con nombre de usuario, estadisticas y botones -->
+        <div class="profile-info">
+
+          <!-- Nombre de usuario -->
+          <div class="username-row">
+            <h2 id="usernameDisplay">usuario_demo</h2>
+          </div>
+
+          <!-- Estadisticas: publicaciones, seguidores, seguidos -->
+          <div class="stats-row">
+            <span><strong>12</strong> publicaciones</span>
+            <span><strong>1.250</strong> seguidores</span>
+            <span><strong>890</strong> seguidos</span>
+          </div>
+
+          <!-- Nombre completo (se actualiza con JavaScript) -->
+          <div class="name-row">
+            <span id="nameDisplay">Usuario Ejemplo</span>
+          </div>
+
+          <!-- Biografia -->
+          <div class="bio">
+            <p>Desarrollador Web</p>
+            <p>Aprendiendo HTML, CSS y JavaScript</p>
+            <p>Bienvenidos a mi perfil</p>
+          </div>
+
+          <!-- Botones de accion -->
+          <div class="action-buttons">
+            <button class="btn-primary" id="editProfileBtn">Editar perfil</button>
+            <button class="btn-secondary">Ver archivo</button>
+          </div>
+
+        </div>
+      </div>
+    </header>
+
+    <!-- ==========================================================
+      SECCION DE HISTORIAS DESTACADAS
+      Circulos con imagen y texto debajo
+      ========================================================== -->
+    <section class="highlights">
+      <div class="highlight-item" id="story1">
+        <div class="highlight-circle">
+          <img src="https://i.pravatar.cc/80?img=1" alt="Historia 1" />
+        </div>
+        <span>Viajes</span>
       </div>
 
-      <!-- Navegación con iconos (similares a Instagram real) -->
-      <nav class="nav-menu">
-
-        <!-- Inicio -->
-        <a href="#" class="nav-item activo">
-          <span class="nav-icono">
-            <svg viewBox="0 0 24 24" width="24" height="24">
-              <path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </span>
-          <span class="nav-texto">Inicio</span>
-        </a>
-
-        <!-- Búsqueda -->
-        <a href="#" class="nav-item">
-          <span class="nav-icono">
-            <svg viewBox="0 0 24 24" width="24" height="24">
-              <circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="1.5"/>
-              <path d="M16.5 16.5L21 21" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-            </svg>
-          </span>
-          <span class="nav-texto">Búsqueda</span>
-        </a>
-
-        <!-- Explorar -->
-        <a href="#" class="nav-item">
-          <span class="nav-icono">
-            <svg viewBox="0 0 24 24" width="24" height="24">
-              <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.5"/>
-              <path d="M12 8l4 4-4 4-4-4 4-4z" fill="currentColor"/>
-            </svg>
-          </span>
-          <span class="nav-texto">Explorar</span>
-        </a>
-
-        <!-- Reels -->
-        <a href="#" class="nav-item">
-          <span class="nav-icono">
-            <svg viewBox="0 0 24 24" width="24" height="24">
-              <rect x="2" y="4" width="20" height="16" rx="3" fill="none" stroke="currentColor" stroke-width="1.5"/>
-              <polygon points="10,8 16,12 10,16" fill="currentColor"/>
-            </svg>
-          </span>
-          <span class="nav-texto">Reels</span>
-        </a>
-
-        <!-- Mensajes -->
-        <a href="#" class="nav-item">
-          <span class="nav-icono">
-            <svg viewBox="0 0 24 24" width="24" height="24">
-              <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </span>
-          <span class="nav-texto">Mensajes</span>
-        </a>
-
-        <!-- Notificaciones -->
-        <a href="#" class="nav-item">
-          <span class="nav-icono">
-            <svg viewBox="0 0 24 24" width="24" height="24">
-              <path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M13.73 21a2 2 0 01-3.46 0" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </span>
-          <span class="nav-texto">Notificaciones</span>
-        </a>
-
-        <!-- Crear -->
-        <a href="#" class="nav-item">
-          <span class="nav-icono">
-            <svg viewBox="0 0 24 24" width="24" height="24">
-              <rect x="3" y="3" width="18" height="18" rx="3" fill="none" stroke="currentColor" stroke-width="1.5"/>
-              <line x1="12" y1="8" x2="12" y2="16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-              <line x1="8" y1="12" x2="16" y2="12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-            </svg>
-          </span>
-          <span class="nav-texto">Crear</span>
-        </a>
-
-        <!-- Perfil (activo) -->
-        <a href="#" class="nav-item activo">
-          <span class="nav-icono">
-            <svg viewBox="0 0 24 24" width="24" height="24">
-              <circle cx="12" cy="8" r="4" fill="none" stroke="currentColor" stroke-width="1.5"/>
-              <path d="M4 21v-1a6 6 0 016-6h4a6 6 0 016 6v1" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-            </svg>
-          </span>
-          <span class="nav-texto">Perfil</span>
-        </a>
-
-      </nav>
-
-      <!-- Más opciones (al final de la barra) -->
-      <div class="nav-item mas-opciones">
-        <span class="nav-icono">
-          <svg viewBox="0 0 24 24" width="24" height="24">
-            <circle cx="12" cy="5" r="1.5" fill="currentColor"/>
-            <circle cx="12" cy="12" r="1.5" fill="currentColor"/>
-            <circle cx="12" cy="19" r="1.5" fill="currentColor"/>
-          </svg>
-        </span>
-        <span class="nav-texto">Más</span>
+      <div class="highlight-item" id="story2">
+        <div class="highlight-circle">
+          <img src="https://i.pravatar.cc/80?img=5" alt="Historia 2" />
+        </div>
+        <span>Codigo</span>
       </div>
 
-    </aside>
-
-    <!-- ================================================================ -->
-    <!-- CONTENIDO PRINCIPAL (PERFIL)                                     -->
-    <!-- ================================================================ -->
-    <main class="contenido-perfil">
-
-      <!-- ================================================================ -->
-      <!-- ENCABEZADO DEL PERFIL                                            -->
-      <!-- ================================================================ -->
-      <header class="encabezado-perfil">
-
-        <!-- Fila superior: foto + info básica -->
-        <div class="fila-perfil">
-
-          <!-- Foto de perfil (con borde estilo historia) -->
-          <div class="contenedor-foto" id="fotoPerfil">
-            <div class="anillo-historia">
-              <div class="foto-perfil">
-                <!-- Placeholder: reemplazar con la imagen de referencia -->
-                <svg viewBox="0 0 100 100" width="100" height="100">
-                  <!-- Fondo circular -->
-                  <circle cx="50" cy="50" r="48" fill="#3a3a3a"/>
-                  <!-- Silueta de persona -->
-                  <circle cx="50" cy="40" r="18" fill="#666"/>
-                  <ellipse cx="50" cy="80" rx="30" ry="22" fill="#666"/>
-                </svg>
-              </div>
-            </div>
-          </div>
-
-          <!-- Información del perfil (usuario, stats, nombre, bio) -->
-          <div class="info-perfil">
-
-            <!-- Nombre de usuario y botones -->
-            <div class="usuario-acciones">
-              <h2 class="nombre-usuario" id="nombreUsuario">usuario_demo</h2>
-              <div class="botones-perfil">
-                <button class="btn btn-primario" id="btnEditarPerfil">Editar perfil</button>
-                <button class="btn btn-secundario">Ver archivo</button>
-              </div>
-              <button class="btn-icono" title="Configuración">
-                <svg viewBox="0 0 24 24" width="24" height="24">
-                  <circle cx="12" cy="12" r="1.5" fill="white"/>
-                  <circle cx="12" cy="5" r="1.5" fill="white"/>
-                  <circle cx="12" cy="19" r="1.5" fill="white"/>
-                </svg>
-              </button>
-            </div>
-
-            <!-- Estadísticas: Publicaciones, Seguidores, Seguidos -->
-            <div class="estadisticas">
-              <div class="estadistica">
-                <span class="numero" id="numPublicaciones">12</span>
-                <span class="etiqueta">publicaciones</span>
-              </div>
-              <div class="estadistica">
-                <span class="numero" id="numSeguidores">1.250</span>
-                <span class="etiqueta">seguidores</span>
-              </div>
-              <div class="estadistica">
-                <span class="numero" id="numSeguidos">890</span>
-                <span class="etiqueta">seguidos</span>
-              </div>
-            </div>
-
-            <!-- Nombre completo y biografía -->
-            <div class="bio" id="bioPerfil">
-              <p class="nombre-completo" id="nombreCompleto">Usuario Ejemplo</p>
-              <p class="descripcion">Desarrollador Web</p>
-              <p class="descripcion">Aprendiendo HTML, CSS y JavaScript</p>
-              <p class="descripcion">Bienvenidos a mi perfil</p>
-            </div>
-
-          </div>
+      <div class="highlight-item" id="story3">
+        <div class="highlight-circle">
+          <img src="https://i.pravatar.cc/80?img=8" alt="Historia 3" />
         </div>
+        <span>Musica</span>
+      </div>
 
-      </header>
-
-      <!-- ================================================================ -->
-      <!-- HISTORIAS DESTACADAS                                            -->
-      <!-- ================================================================ -->
-      <section class="historias-seccion">
-
-        <h3 class="titulo-seccion">Historias destacadas</h3>
-
-        <div class="contenedor-historias">
-
-          <!-- Historia: HTML -->
-          <div class="historia-item" data-historia="HTML">
-            <div class="anillo-historia pequeno">
-              <div class="miniatura-historia">
-                <span class="texto-miniatura">&lt;/&gt;</span>
-              </div>
-            </div>
-            <span class="nombre-historia">HTML</span>
-          </div>
-
-          <!-- Historia: CSS -->
-          <div class="historia-item" data-historia="CSS">
-            <div class="anillo-historia pequeno">
-              <div class="miniatura-historia">
-                <span class="texto-miniatura">#</span>
-              </div>
-            </div>
-            <span class="nombre-historia">CSS</span>
-          </div>
-
-          <!-- Historia: JavaScript -->
-          <div class="historia-item" data-historia="JavaScript">
-            <div class="anillo-historia pequeno">
-              <div class="miniatura-historia">
-                <span class="texto-miniatura">{ }</span>
-              </div>
-            </div>
-            <span class="nombre-historia">JS</span>
-          </div>
-
-          <!-- Historia: Proyectos -->
-          <div class="historia-item" data-historia="Proyectos">
-            <div class="anillo-historia pequeno">
-              <div class="miniatura-historia">
-                <span class="texto-miniatura">💻</span>
-              </div>
-            </div>
-            <span class="nombre-historia">Proyectos</span>
-          </div>
-
-          <!-- Historia: Meta -->
-          <div class="historia-item" data-historia="Metas">
-            <div class="anillo-historia pequeno">
-              <div class="miniatura-historia">
-                <span class="texto-miniatura">🎯</span>
-              </div>
-            </div>
-            <span class="nombre-historia">Metas</span>
-          </div>
-
+      <div class="highlight-item" id="story4">
+        <div class="highlight-circle">
+          <img src="https://i.pravatar.cc/80?img=10" alt="Historia 4" />
         </div>
+        <span>Proyectos</span>
+      </div>
+    </section>
 
-      </section>
+    <!-- ==========================================================
+      BARRA DE NAVEGACION DE PUBLICACIONES
+      Iconos: cuadricula, reels, etiquetado
+      ========================================================== -->
+    <nav class="posts-nav">
+      <div class="nav-tab active">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+          <rect x="3" y="3" width="7" height="7" />
+          <rect x="14" y="3" width="7" height="7" />
+          <rect x="3" y="14" width="7" height="7" />
+          <rect x="14" y="14" width="7" height="7" />
+        </svg>
+        <span>PUBLICACIONES</span>
+      </div>
+      <div class="nav-tab">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="2" y="2" width="20" height="20" rx="4" />
+          <path d="M8 2v20M16 2v20M2 8h20M2 16h20" />
+        </svg>
+        <span>REELS</span>
+      </div>
+      <div class="nav-tab">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M7 7h10v10M7 17L17 7" />
+        </svg>
+        <span>ETIQUETADO</span>
+      </div>
+    </nav>
 
-      <!-- ================================================================ -->
-      <!-- NAVEGACIÓN DE PUBLICACIONES (GRID / REELS / ETIQUETADO)        -->
-      <!-- ================================================================ -->
-      <nav class="navegacion-publicaciones">
+    <!-- ==========================================================
+      CONTENIDO VACIO (NO HAY PUBLICACIONES)
+      Mensaje central cuando el perfil no tiene posts
+      ========================================================== -->
+    <section class="empty-state">
+      <div class="empty-icon">
+        <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5">
+          <rect x="3" y="3" width="18" height="18" rx="4" />
+          <circle cx="8.5" cy="8.5" r="1.5" />
+          <path d="M21 15l-5-5L5 21" />
+        </svg>
+      </div>
+      <p class="empty-title">No hay publicaciones</p>
+      <p class="empty-subtitle">
+        Cuando el usuario comparta fotos o videos,<br />
+        apareceran aqui.
+      </p>
+    </section>
 
-        <a href="#" class="nav-pub activo">
-          <svg viewBox="0 0 24 24" width="12" height="12">
-            <rect x="3" y="3" width="7" height="7" rx="1" fill="currentColor"/>
-            <rect x="14" y="3" width="7" height="7" rx="1" fill="currentColor"/>
-            <rect x="3" y="14" width="7" height="7" rx="1" fill="currentColor"/>
-            <rect x="14" y="14" width="7" height="7" rx="1" fill="currentColor"/>
-          </svg>
-          <span>PUBLICACIONES</span>
-        </a>
-
-        <a href="#" class="nav-pub">
-          <svg viewBox="0 0 24 24" width="12" height="12">
-            <rect x="2" y="2" width="20" height="20" rx="3" fill="none" stroke="currentColor" stroke-width="1.5"/>
-            <polygon points="10,7 17,12 10,17" fill="currentColor"/>
-          </svg>
-          <span>REELS</span>
-        </a>
-
-        <a href="#" class="nav-pub">
-          <svg viewBox="0 0 24 24" width="12" height="12">
-            <rect x="2" y="2" width="20" height="20" rx="3" fill="none" stroke="currentColor" stroke-width="2"/>
-            <path d="M12 2v20M2 12h20" stroke="currentColor" stroke-width="2"/>
-          </svg>
-          <span>ETIQUETADO</span>
-        </a>
-
-      </nav>
-
-      <!-- ================================================================ -->
-      <!-- CONTENIDO VACÍO (cuando no hay publicaciones)                   -->
-      <!-- ================================================================ -->
-      <section class="contenido-vacio">
-
-        <div class="icono-camara">
-          <svg viewBox="0 0 24 24" width="60" height="60">
-            <rect x="2" y="4" width="20" height="16" rx="3" fill="none" stroke="#555" stroke-width="1.5"/>
-            <circle cx="12" cy="12" r="4" fill="none" stroke="#555" stroke-width="1.5"/>
-            <circle cx="17" cy="7" r="1.5" fill="#555"/>
-          </svg>
-        </div>
-
-        <h2 class="titulo-vacio">No hay publicaciones aún</h2>
-        <p class="subtitulo-vacio">Cuando el usuario comparta publicaciones, las verás aquí.</p>
-
-      </section>
-
-    </main>
-
-  </div>
+  </main>
 
   <!-- Enlace al archivo JavaScript externo -->
   <script src="script.js"></script>
-
 </body>
 </html>
