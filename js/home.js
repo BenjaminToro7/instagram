@@ -47,33 +47,5 @@ function darLikeFoto(wrap) {
   anim.classList.add("mostrar");
 }
 
-function toggleComment(icon) {
-  let post = icon.closest(".post");
-  let existente = post.querySelector(".comentar-box");
-  if (existente) {
-    existente.remove();
-    return;
-  }
-  let box = document.createElement("div");
-  box.className = "comentar-box";
-  box.innerHTML = '<input type="text" class="comentar-input" placeholder="Agrega un comentario..."><button class="comentar-subir">Publicar</button>';
-  post.querySelector(".post-tiempo").after(box);
-  let input = box.querySelector(".comentar-input");
-  let btn = box.querySelector(".comentar-subir");
-  btn.onclick = function() {
-    let texto = input.value.trim();
-    if (!texto) return;
-    let p = document.createElement("div");
-    p.className = "comentar-texto";
-    p.textContent = texto;
-    box.insertBefore(p, box.querySelector(".comentar-input").parentNode);
-    input.value = "";
-    let c = post.querySelector(".post-comments");
-    let n = parseInt(c.textContent.match(/\d+/)[0]);
-    c.textContent = "Ver los " + (n + 1) + " comentarios";
-  };
-  input.onkeydown = function(e) {
-    if (e.key === "Enter") btn.click();
-  };
-  input.focus();
-}
+
+

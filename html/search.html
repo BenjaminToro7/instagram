@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buscar - Instagram</title>
+  <link rel="stylesheet" href="../css/search.css">
+</head>
+<body>
+
+<div class="todo">
+
+  <!-- BARRA LATERAL IZQUIERDA -->
+  <div class="barra">
+    <div class="logo">Instagram</div>
+    <div class="menu">
+      <div class="opcion" onclick="location.href='home.html'">
+        <svg viewBox="0 0 24 24" width="24" height="24"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 0 0 1 1h3m10-11l2 2m-2-2v10a1 1 0 0 1-1 1h-3m-6 0a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1m-6 0h6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Inicio
+      </div>
+      <div class="opcion active">
+        <svg viewBox="0 0 24 24" width="24" height="24"><circle cx="10" cy="10" r="7" fill="none" stroke="currentColor" stroke-width="2"/><line x1="15" y1="15" x2="21" y2="21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        Buscar
+      </div>
+      <div class="opcion" onclick="location.href='reels.html'">
+        <svg viewBox="0 0 24 24" width="24" height="24"><polygon points="5 3 19 12 5 21 5 3" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+        Reels
+      </div>
+      <div class="opcion" onclick="location.href='mensajes.html'">
+        <svg viewBox="0 0 24 24" width="24" height="24"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z" fill="none" stroke="currentColor" stroke-width="2"/><path d="M22 6l-10 7L2 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Mensajes
+      </div>
+      <div class="opcion">
+        <svg viewBox="0 0 24 24" width="24" height="24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+        Notificaciones
+      </div>
+      <div class="opcion">
+        <svg viewBox="0 0 24 24" width="24" height="24"><line x1="12" y1="5" x2="12" y2="19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="5" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        Crear
+      </div>
+      <div class="opcion" onclick="location.href='profile.html'">
+        <img src="https://i.pravatar.cc/24?img=1" style="width:24px;height:24px;border-radius:50%">
+        Perfil
+      </div>
+    </div>
+    <div class="opcion abajo">
+      <svg viewBox="0 0 24 24" width="24" height="24"><line x1="3" y1="6" x2="21" y2="6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="3" y1="12" x2="21" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="3" y1="18" x2="21" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      Mas
+    </div>
+  </div>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <div class="contenido">
+
+    <!-- BARRA DE BUSQUEDA -->
+    <div class="search-container">
+      <div class="search-bar">
+        <svg class="search-icon" viewBox="0 0 24 24" width="18" height="18"><circle cx="10" cy="10" r="7" fill="none" stroke="currentColor" stroke-width="2"/><line x1="15" y1="15" x2="21" y2="21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <input type="text" id="searchInput" placeholder="Buscar usuarios...">
+      </div>
+    </div>
+
+    <!-- LISTA DE USUARIOS -->
+    <div id="userList" class="user-list"></div>
+
+    <!-- SECCION EXPLORAR -->
+    <div class="explore-section">
+      <h2 class="explore-title">Explorar</h2>
+      <div class="explore-grid">
+        <div class="grid-item big">
+          <img src="../imagenes/publicacion_m30m.png" alt="Publicacion">
+        </div>
+        <div class="grid-item">
+          <img src="../imagenes/publicacion_matemagia.png" alt="Publicacion">
+        </div>
+        <div class="grid-item">
+          <img src="../imagenes/m30m.jpg" alt="Publicacion">
+        </div>
+        <div class="grid-item wide">
+          <img src="../imagenes/matemagia.png" alt="Publicacion">
+        </div>
+        <div class="grid-item">
+          <img src="../img/perfiles/arturo.jpg" alt="Publicacion">
+        </div>
+        <div class="grid-item tall">
+          <img src="../img/perfiles/viajes.jpg" alt="Publicacion">
+        </div>
+        <div class="grid-item">
+          <img src="../img/perfiles/starsmusic.jpg" alt="Publicacion">
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<script src="../js/search.js"></script>
+</body>
+</html>
